@@ -1,0 +1,28 @@
+{
+    "name": "challenge-week-7",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "type": "module",
+    "scripts": {
+        "start": "tsc --watch",
+        "lint": "eslint .",
+        "build": "tsc"
+    },
+    "keywords": [],
+    "author": "Michael",
+    "license": "ISC",
+    "prettier": {
+        "singleQuote": true
+    },
+    "devDependencies": {
+        "eslint": "^8.26.0",
+        "eslint-config-prettier": "^8.5.0",
+        "eslint-plugin-import": "^2.26.0",
+        "husky": "^8.0.2",
+        "typescript": "^4.8.4",
+        "@types/node": "^18.11.9",
+        "@typescript-eslint/eslint-plugin": "^5.42.1",
+        "@typescript-eslint/parser": "^5.42.1"
+    }
+}
