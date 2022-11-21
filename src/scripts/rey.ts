@@ -1,14 +1,14 @@
 import { Character } from './personaje.js';
 export class King extends Character {
     constructor(
+        role: string,
         name: string,
         familyName: string,
         age: number,
-        role: string,
-        public regnalYears: number,
-        public message: string
+        public message: string,
+        public regnalYears: number
     ) {
-        super(name, familyName, age, role);
+        super(role, name, familyName, age);
         super.talk(this.message);
     }
 }
