@@ -1,64 +1,16 @@
-import { generateCharacter } from './personaje.js';
+import { Adviser } from './asesor.js';
+import { Squire } from './escudero.js';
+import { Knight } from './luchador.js';
+import { King } from './rey.js';
 
 const ulDiv = document.querySelector('ul') as HTMLDListElement;
-/*const charactersData = [
-    ['King', 'Joffrey', 'Baratheon', 14, 2, 'Vais a morir todos'],
-    [
-        'Knight',
-        'Jaime',
-        'Lannister',
-        34,
-        'Primero pego y luego pregunto',
-        'Espada',
-        9,
-    ],
-    [
-        'Knight',
-        'Daenerys',
-        'Targaryen',
-        16,
-        'Primero pego y luego pregunto',
-        'Dragones',
-        10,
-    ],
-    [
-        'Adviser',
-        'Tyrion',
-        'Lannister',
-        27,
-        'No sé por qué, pero creo que voy a morir pronto',
-        'Daenerys',
-    ],
-    ['Squire', 'Bronn', 'Stokeworth', 32, 'Soy un loser', 'Jaime', 5],
-];
-
-const characterObject = charactersData.map((element) => {
-    return generateCharacter(element);
-});*/
 
 const characters = [
-    {
-        role: 'King',
-        name: 'Joffrey',
-        familyName: 'Baratheon',
-        age: 14,
-        regnalYears: 2,
-        isAlive: true,
-        talk() {
-            return 'Vais a morir todos';
-        },
-        die() {
-            this.isAlive = false;
-        },
-    },
-    {
-        role: 'Adviser',
-        name: 'Tyrion',
-        familyName: 'Lannister',
-        age: 27,
-        message: 'No sé por qué, pero creo que voy a morir pronto',
-        whoAsses: 'Daenerys',
-    },
+    new King('King', 'Joffrey', 'Baratheon', 14, 2),
+    new Knight('Knight', 'Jaime', 'Lannister', 34, 'Espada', 9),
+    new Knight('Knight', 'Daenerys', 'Targaryen', 16, 'Dragones', 10),
+    new Adviser('Adviser', 'Tyrion', 'Lannister', 27, 'Daenerys'),
+    new Squire('Squire', 'Bronn', 'Stokeworth', 32, 'Jaime', 5),
 ];
 
 interface CharacterDataType {
@@ -73,6 +25,7 @@ interface CharacterDataType {
     skillLevel: number;
     whoServe: string;
     whoAsses: string;
+    emoji: string;
 }
 
 const displayCard = (characterData: CharacterDataType) => {
@@ -116,8 +69,8 @@ const displayCard = (characterData: CharacterDataType) => {
                         </div>
                     </div>
                 </div>
-                <i class="emoji"></i>
-            </div>`;
+                <i class="emoji">${characterData.emoji}</i>
+            </div>`;            
     ulDiv?.appendChild(newLi);
 };
 
