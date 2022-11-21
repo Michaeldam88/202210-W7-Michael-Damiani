@@ -4,7 +4,7 @@ import { Adviser } from './asesor.js';
 import { Squire } from './escudero.js';
 interface Action {
     talk: (message: string) => string;
-    die: (message: string) => string;
+    die: (message: string) => string;    
 }
 export class Character implements Action {
     isAlive: boolean;
@@ -25,9 +25,9 @@ export class Character implements Action {
     }
 }
 
-export const generateCharacter = (data: (string | number)[]) => {
+export const generateCharacter = (data) => {
     let characterObject;
-    switch (data[0]) {
+    switch (data.role) {
         case 'King':
             characterObject = new King(...data);
             break;
