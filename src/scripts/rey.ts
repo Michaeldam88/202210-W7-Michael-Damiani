@@ -1,14 +1,16 @@
 import { Character } from './personaje.js';
 export class King extends Character {
+    emoji: any;
+    message: string;
     constructor(
         role: string,
         name: string,
         familyName: string,
         age: number,
-        public message: string,
         public regnalYears: number
     ) {
         super(role, name, familyName, age);
-        super.talk(this.message);
+        this.emoji = '\uF451';
+        this.message = "'Vais a morir todos'";
     }
 }
