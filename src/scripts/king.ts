@@ -1,7 +1,7 @@
-import { Character } from './personaje.js';
+import { Character } from './character.js';
 export class King extends Character {
     emoji = String.fromCodePoint(0x1f451);
-    message = 'Vais a morir todos';    
+    message = 'Vais a morir todos';
     constructor(
         role: string,
         name: string,

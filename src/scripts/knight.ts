@@ -1,6 +1,6 @@
-import { Character } from './personaje.js';
+import { Character } from './character.js';
 export class Knight extends Character {
-    emoji = String.fromCodePoint(0x1F5E1)
+    emoji = String.fromCodePoint(0x1f5e1);
     message = 'Primero pego y luego pregunto';
     constructor(
         role: string,
@@ -12,6 +12,6 @@ export class Knight extends Character {
     ) {
         super(role, name, familyName, age);
         this.extraInfo = `<li>Arma: ${this.weapon}</li>
-                        <li>Destreza: ${this.skillLevel}</li>`
+                        <li>Destreza: ${this.skillLevel}</li>`;
     }
 }
