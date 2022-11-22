@@ -1,7 +1,7 @@
 import { Character } from './personaje.js';
 export class King extends Character {
-    emoji = String.fromCodePoint(0x1F451)
-    message = 'Vais a morir todos';
+    emoji = String.fromCodePoint(0x1f451);
+    message = 'Vais a morir todos';    
     constructor(
         role: string,
         name: string,
@@ -10,5 +10,6 @@ export class King extends Character {
         public regnalYears: number
     ) {
         super(role, name, familyName, age);
+        this.extraInfo = `<li>Años de reinado: ${this.regnalYears}</li>`;
     }
 }

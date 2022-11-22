@@ -1,6 +1,6 @@
 import { Character } from './personaje.js';
 export class Adviser extends Character {
-    emoji = String.fromCodePoint(0x1F393);
+    emoji = String.fromCodePoint(0x1f393);
     message = 'No sé por qué, pero creo que voy a morir pronto';
     constructor(
         role: string,
@@ -10,5 +10,6 @@ export class Adviser extends Character {
         public whoAsses: string
     ) {
         super(role, name, familyName, age);
+        this.extraInfo = `<li>Sirve a: ${this.whoAsses}</li>`;
     }
 }

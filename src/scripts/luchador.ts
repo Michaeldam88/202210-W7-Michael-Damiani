@@ -11,5 +11,7 @@ export class Knight extends Character {
         public skillLevel: number
     ) {
         super(role, name, familyName, age);
+        this.extraInfo = `<li>Arma: ${this.weapon}</li>
+                        <li>Destreza: ${this.skillLevel}</li>`
     }
 }

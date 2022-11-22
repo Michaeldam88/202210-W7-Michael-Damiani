@@ -11,5 +11,7 @@ export class Squire extends Character {
         public kissAssLevel: number
     ) {
         super(role, name, familyName, age);
+        this.extraInfo = `<li>Sirve a: ${this.whoServe}</li>
+                        <li>Peloteo: ${this.kissAssLevel}</li>`;
     }
 }

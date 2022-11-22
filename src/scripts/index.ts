@@ -26,6 +26,10 @@ interface CharacterDataType {
     whoServe: string;
     whoAsses: string;
     emoji: string;
+    message: string;
+    extraInfo: string;
+    talk: (message: string) => void;
+    die: () => void;
 }
 
 const displayCard = (characterData: CharacterDataType) => {
@@ -37,6 +41,7 @@ const displayCard = (characterData: CharacterDataType) => {
                     src="../img/${characterData.name.toLowerCase()}.jpg"
                     alt="${characterData.name} ${characterData.familyName}"
                     class="character__picture card-img-top"
+                    id="img${characterData.name}"
                 />
                 <div class="card-body">
                     <h2 class="character__name card-title h4">${
@@ -47,31 +52,41 @@ const displayCard = (characterData: CharacterDataType) => {
                             <li>Edad: ${characterData.age} años</li>
                             <li>
                                 Estado:
-                                <i class="fas fa-thumbs-down"></i>
-                                <i class="fas fa-thumbs-up"></i>
+                                <i class="fas fa-thumbs-down" id="down${
+                                    characterData.name
+                                }"></i>
+                                <i class="fas fa-thumbs-up" id="up${
+                                    characterData.name
+                                }"></i>
                             </li>
                         </ul>
                     </div>
                     <div class="character__overlay">
-                        <ul class="list-unstyled">
-                            <li>Años de reinado: ${
-                                characterData.regnalYears
-                            }</li>
-                            <li>Arma: ${characterData.weapon}</li>
-                            <li>Destreza: ${characterData.skillLevel}</li>
-                            <li>Peloteo: ${characterData.kissAssLevel}</li>
-                            <li>Asesora a: ${characterData.whoServe}</li>
-                            <li>Sirve a: ${characterData.whoAsses}</li>
+                        <ul class="list-unstyled">   
+                            ${characterData.extraInfo}               
                         </ul>
                         <div class="character__actions">
-                            <button class="character__action btn  id="talk"">habla</button>
-                            <button class="character__action btn  id="die"">muere</button>
+                            <button class="character__action btn" id="talk${
+                                characterData.name
+                            }">habla</button>
+                            <button class="character__action btn"  id="die${
+                                characterData.name
+                            }">muere</button>
                         </div>
                     </div>
                 </div>
                 <i class="emoji">${characterData.emoji}</i>
-            </div>`;            
+            </div>`;
     ulDiv?.appendChild(newLi);
+
+    const talkBtn = document.querySelector(`#talk${characterData.name}`);
+    talkBtn?.addEventListener('click', () => {
+        characterData.talk(characterData.message);
+    });
+    const dieBtn = document.querySelector(`#die${characterData.name}`);
+    dieBtn?.addEventListener('click', () => {
+        characterData.die();
+    });
 };
 
 characters.forEach((element) => displayCard(element));
