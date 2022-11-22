@@ -1,7 +1,7 @@
-import { Adviser } from './asesor.js';
-import { Squire } from './escudero.js';
-import { Knight } from './luchador.js';
-import { King } from './rey.js';
+import { Adviser } from './adviser.js';
+import { Squire } from './squire.js';
+import { Knight } from './knight.js';
+import { King } from './king.js';
 
 const ulDiv = document.querySelector('ul') as HTMLDListElement;
 
@@ -13,26 +13,9 @@ const characters = [
     new Squire('Squire', 'Bronn', 'Stokeworth', 32, 'Jaime', 5),
 ];
 
-interface CharacterDataType {
-    role: string;
-    name: string;
-    familyName: string;
-    age: number;
-    regnalYears: number;
-    isAlive: boolean;
-    weapon: string;
-    kissAssLevel: number;
-    skillLevel: number;
-    whoServe: string;
-    whoAsses: string;
-    emoji: string;
-    message: string;
-    extraInfo: string;
-    talk: (message: string) => void;
-    die: () => void;
-}
-
-const displayCard = (characterData: CharacterDataType) => {
+const displayCard = (
+    characterData: King | Squire | Knight | Adviser | Squire
+) => {
     const newLi = document.createElement('li');
     newLi.className = 'character col';
     newLi.innerHTML = `

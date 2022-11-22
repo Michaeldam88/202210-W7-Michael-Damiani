@@ -1,4 +1,4 @@
-import { Character } from './personaje.js';
+import { Character } from './character.js';
 export class Adviser extends Character {
     emoji = String.fromCodePoint(0x1f393);
     message = 'No sé por qué, pero creo que voy a morir pronto';

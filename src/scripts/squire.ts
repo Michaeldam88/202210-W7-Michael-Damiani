@@ -1,4 +1,4 @@
-import { Character } from './personaje.js';
+import { Character } from './character.js';
 export class Squire extends Character {
     emoji = String.fromCodePoint(0x1f6e1);
     message = 'Soy un loser';
