@@ -21,7 +21,7 @@ const displayCard = (
     newLi.innerHTML = `
             <div class="card character__card">
                 <img
-                    src="../img/${characterData.name.toLowerCase()}.jpg"
+                    src="img/${characterData.name.toLowerCase()}.jpg"
                     alt="${characterData.name} ${characterData.familyName}"
                     class="character__picture card-img-top"
                     id="img${characterData.name}"

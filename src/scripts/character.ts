@@ -27,7 +27,7 @@ export class Character implements Actions {
 
         if (talkImgDisplay && talkDisplay && talkTextDisplay) {
             talkTextDisplay.innerHTML = message;
-            talkImgDisplay.src = `../img/${this.name.toLowerCase()}.jpg`;
+            talkImgDisplay.src = `img/${this.name.toLowerCase()}.jpg`;
             talkImgDisplay.alt = `${this.name} ${this.familyName}`;
             talkDisplay.classList.add('on');
 
