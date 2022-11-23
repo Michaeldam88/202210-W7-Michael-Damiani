@@ -4,6 +4,9 @@
 
 # GoT DOM
 
+Netlify: https://juegodetronos.netlify.app/
+Sonar: https://sonarcloud.io/summary/overall?id=Michaeldam88_202210-W7-Michael-Damiani
+
 Tendrás que programar un interfaz de usuario para que refleje el siguiente modelo de datos.
 
 En Juego de Tronos existen personajes. Todos esos personajes tienen la siguiente información: · Nombre · Familia a la que pertenece · Edad · Estado (vivo o muerto, aunque inicialmente todos están vivos)
