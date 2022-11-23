@@ -3,7 +3,7 @@ import { Squire } from './squire.js';
 import { Knight } from './knight.js';
 import { King } from './king.js';
 
-const ulDiv = document.querySelector('ul') as HTMLDListElement;
+const ulDiv: HTMLElement | null = document.querySelector('ul');
 
 const characters = [
     new King('King', 'Joffrey', 'Baratheon', 14, 2),
@@ -14,7 +14,7 @@ const characters = [
 ];
 
 const displayCard = (
-    characterData: King | Squire | Knight | Adviser | Squire
+    characterData: King | Squire | Knight | Adviser 
 ) => {
     const newLi = document.createElement('li');
     newLi.className = 'character col';
